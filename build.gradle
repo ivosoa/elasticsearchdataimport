@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+def mainClass = 'com.iso.DataImport';
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = mainClass
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.10'
+}
